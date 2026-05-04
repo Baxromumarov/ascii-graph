@@ -3,7 +3,10 @@ package main
 const (
 	cellWidth          = 4
 	defaultChartHeight = 10
-	pieBarWidth        = 40
+	pieMinRadius       = 5
+	pieAspectX         = 2.0
+	pieOuterPadding    = 0.25
+	pieBorderThreshold = 0.45
 )
 
 const (
@@ -20,6 +23,25 @@ const (
 	defaultUpRight      = '└'
 	defaultDownTick     = '┬'
 	defaultRightTick    = '├'
+	pieEmptyRune        = ' '
+	pieBorderRune       = '•'
+	pieFallbackSymbol   = '•'
+	pieLegendLeftTick   = '┤'
+)
+
+const (
+	pieErrNegativeValues       = "pie chart requires non-negative values"
+	pieErrTotalGreaterThanZero = "pie chart requires a total greater than zero"
+	pieErrAtLeastOnePositive   = "pie chart requires at least one positive value"
+	pieSymbolPool              = "█▓▒░#@%*+=-~"
+	pieTitleFormat             = "%s\n\n"
+	pieRowFormat               = "%-*s  %s\n"
+	pieTotalLabelFormat        = "Total: %s"
+	pieLegendItemFormat        = "%c  %-12s %8s  %6.2f%%"
+	pieLegendTitle             = "Pie Summary"
+	pieLegendTitlePadding      = " "
+	pieLegendRowPrefix         = "│ "
+	pieLegendRowSuffix         = " │"
 )
 
 // Direction bitmasks for line routing
